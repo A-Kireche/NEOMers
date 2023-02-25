@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:myapp/page-3/newtransport.dart';
 
 class Validation extends StatelessWidget {
   const Validation({super.key});
@@ -27,12 +28,17 @@ class Validation extends StatelessWidget {
                Container(
                  child: Stack(
                   children: [ 
-                   Container(
-                   margin: EdgeInsets.fromLTRB(30, 110, 0, 0),child :Image(
-                  image: AssetImage('assets/Group 7.png'),
-                  height: 35,
-                  width: 35,
-                )),
+                   GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_)=>Transport()));
+                    },
+                     child: Container(
+                     margin: EdgeInsets.fromLTRB(30, 110, 0, 0),child :Image(
+                                     image: AssetImage('assets/Group 7.png'),
+                                     height: 35,
+                                     width: 35,
+                                   )),
+                   ),
                     Container(
                    margin: EdgeInsets.fromLTRB(60, 280, 0, 0),child :Image(
                   image: AssetImage('assets/Group 19.png'),

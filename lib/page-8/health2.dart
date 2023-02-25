@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/page-5/health.dart';
 import 'package:myapp/utils.dart';
 
 class HealthNextpage extends StatelessWidget {
@@ -125,15 +126,20 @@ class HealthNextpage extends StatelessWidget {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Container(
-                          // group6EK7 (14:24)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 8*fem, 0*fem),
-                          width: 44*fem,
-                          height: 44*fem,
-                          child: Image.asset(
-                            'assets/page-1/images/group-6.png',
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_)=>HealthPage()));
+                          },
+                          child: Container(
+                            // group6EK7 (14:24)
+                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 8*fem, 0*fem),
                             width: 44*fem,
                             height: 44*fem,
+                            child: Image.asset(
+                              'assets/page-1/images/group-6.png',
+                              width: 44*fem,
+                              height: 44*fem,
+                            ),
                           ),
                         ),
                         Text(

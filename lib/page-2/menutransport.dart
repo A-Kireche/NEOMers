@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/page-10/menu.dart';
+import 'package:myapp/page-3/newtransport.dart';
+import 'package:myapp/page-9/process.dart';
 
 class MenuTransport extends StatelessWidget {
   const MenuTransport({super.key});
@@ -12,7 +15,13 @@ class MenuTransport extends StatelessWidget {
                      Padding(
                        padding: EdgeInsets.fromLTRB(30,50,0,0),
                        child: Row(children: [
-                    Image(image: AssetImage('assets/Group 7.png'),height: 35,width: 35,)
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(builder: (_)=>Scene())
+                        );
+                      },
+                      child: Image(image: AssetImage('assets/Group 7.png'),height: 35,width: 35,))
   
                   ],),
                      ),
@@ -44,23 +53,28 @@ class MenuTransport extends StatelessWidget {
                   ),
             
                   // ignore: sort_child_properties_last
-                  Container(
-                    height: 57,
-                    width: 309,
-                    margin: EdgeInsets.fromLTRB(40, 91, 40,0 ),
-                    child: ElevatedButton(onPressed: (){}, child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                      Image(image: AssetImage('assets/smile.png')),
-                      Text("Lift Up You Mood",
-                    style: GoogleFonts.openSans(
-                                  height: 1.5,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w300,
-                                  color: Colors.white)),]),
-            
-                                   style: ElevatedButton.styleFrom(primary: Color(0xff04619C),
-                                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50))),),
+                  GestureDetector(
+                    onTap: (() {
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_)=>Loading()));
+                    }),
+                    child: Container(
+                      height: 57,
+                      width: 309,
+                      margin: EdgeInsets.fromLTRB(40, 91, 40,0 ),
+                      child: ElevatedButton(onPressed: (){}, child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                        Image(image: AssetImage('assets/smile.png')),
+                        Text("Lift Up You Mood",
+                      style: GoogleFonts.openSans(
+                                    height: 1.5,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w300,
+                                    color: Colors.white)),]),
+                              
+                                     style: ElevatedButton.styleFrom(primary: Color(0xff04619C),
+                                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50))),),
+                    ),
                   ),
                   Container(
                     height: 57,
@@ -70,12 +84,17 @@ class MenuTransport extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                       Image(image: AssetImage('assets/map.png')),
-                      Text("Pick up your destination",
-                    style: GoogleFonts.openSans(
-                                  height: 1.5,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w300,
-                                  color: Colors.white)),]),
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_)=>Transport()));
+                        },
+                        child: Text("Pick up your destination",
+                                          style: GoogleFonts.openSans(
+                                    height: 1.5,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w300,
+                                    color: Colors.white)),
+                      ),]),
             
                                    style: ElevatedButton.styleFrom(primary: Color(0xff04619C),
                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50))),),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/page-10/menu.dart';
 import 'package:myapp/utils.dart';
 
 class Wallet extends StatelessWidget {
@@ -123,15 +124,20 @@ class Wallet extends StatelessWidget {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Container(
-                          // autogroupukidocH (JqqvuxXHsSEYDf2tgMUKid)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 13.26*fem, 0*fem),
-                          width: 36.48*fem,
-                          height: 34.87*fem,
-                          child: Image.asset(
-                            'assets/page-1/images/auto-group-ukid.png',
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_)=>Scene()));
+                          },
+                          child: Container(
+                            // autogroupukidocH (JqqvuxXHsSEYDf2tgMUKid)
+                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 13.26*fem, 0*fem),
                             width: 36.48*fem,
                             height: 34.87*fem,
+                            child: Image.asset(
+                              'assets/page-1/images/auto-group-ukid.png',
+                              width: 36.48*fem,
+                              height: 34.87*fem,
+                            ),
                           ),
                         ),
                         Container(

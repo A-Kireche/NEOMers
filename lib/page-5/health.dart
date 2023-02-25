@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/page-10/menu.dart';
+import 'package:myapp/page-8/health2.dart';
 
 class HealthPage extends StatelessWidget {
   const HealthPage({super.key});
@@ -15,7 +17,11 @@ class HealthPage extends StatelessWidget {
           padding: const EdgeInsets.all(20.0),
           child: Row(
             children: [
-              Image.asset("assets/back_green.png",height: 35,width: 35,),
+              GestureDetector(
+                onTap: (){
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_)=>Scene()));
+                },
+                child: Image.asset("assets/back_green.png",height: 35,width: 35,)),
               SizedBox(width: 15,),
               Text("Health",style: GoogleFonts.openSans(fontWeight: FontWeight.w600, fontSize: 24,color: Color.fromARGB(255, 109, 238, 154)),)
             ],
@@ -49,7 +55,9 @@ class HealthPage extends StatelessWidget {
                 SizedBox(height: 10,),
                 Center(
                   child: GestureDetector(
-                    onTap: (){},
+                    onTap: (){
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_)=>HealthNextpage()));
+                    },
                     child: Container(padding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
                       decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(20),border: Border.all()),
                       child: Text("Show more",style: GoogleFonts.openSans(fontSize: 16,color:Color.fromARGB(255, 76, 175, 79) ),),),

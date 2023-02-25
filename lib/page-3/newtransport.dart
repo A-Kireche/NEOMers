@@ -1,4 +1,8 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
+import 'package:myapp/page-2/menutransport.dart';
+import 'package:myapp/page-6/confirmation.dart';
 
 class Transport extends StatelessWidget {
   const Transport({super.key});
@@ -11,7 +15,9 @@ class Transport extends StatelessWidget {
           elevation: 0,
           backgroundColor: const Color(0xff04619C),
           leading: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_)=>MenuTransport()));
+              },
               child: Container(
                   margin: const EdgeInsets.fromLTRB(25, 0, 0, 0),
                   child: const Image(
@@ -91,8 +97,16 @@ class Transport extends StatelessWidget {
                                 color: Color(0xff04619C)),
                           )),
                           Row(children: [
-                            Container(margin:EdgeInsets.fromLTRB(50, 28,0,0),child: Image(image: AssetImage('assets/Rectangle_32.png'),)),
-                           Container(margin:EdgeInsets.fromLTRB(40, 28,0,0),child: Image(image: AssetImage('assets/Rectangle-33.png'),)),
+                            GestureDetector(
+                              onTap: (){
+                                Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_)=>Validation()));
+                              },
+                              child: Container(margin:EdgeInsets.fromLTRB(50, 28,0,0),child: Image(image: AssetImage('assets/Rectangle_32.png'),))),
+                           GestureDetector(
+                            onTap: (){
+                              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_)=>Validation()));
+                            },
+                            child: Container(margin:EdgeInsets.fromLTRB(40, 28,0,0),child: Image(image: AssetImage('assets/Rectangle-33.png'),))),
 
                           ],),
                     ]),
